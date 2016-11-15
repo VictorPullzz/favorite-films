@@ -1,0 +1,7 @@
+.film_item {
+    height: 200px;
+    text-align: center;
+    padding: 10% 0 10% 0;
+    border: #FFB640 1px solid;
+    box-sizing: border-box;
+}

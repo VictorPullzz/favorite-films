@@ -1,0 +1,12 @@
+<div id="write_message">
+	<form method="POST" action="?page=messages&action=submit" class="pure-form pure-form-stacked">
+		<legend style="text-align: center;">Написать сообщение</legend>
+		<input type="text" name="to" placeholder="Получатель (логин)" value="<?echo $to;?>">
+		<input type="text" name="subject" placeholder="Тема" value="<?echo $subject;?>">
+		<textarea name="text" placeholder="введите текст сообщения здесь."></textarea>
+		<div>
+			<input type="submit" value="Отправить" class="pure-button pure-button-primary">
+			<a href="?page=messages" class="pure-button pure-button-primary">Отменить</a>
+		</div>
+	</form>
+</div>
