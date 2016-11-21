@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_COOKIE} ref=([^;]+) [NC]
+RewriteRule ^r/?$ r=%1 [NC,L,QSA]
+
+RewriteRule ^r=([A-Za-z0-9]+)$ index.php?page=registration&r=$1 [L]
+RewriteRule ^r/?$ index.php?page=registration [L]
