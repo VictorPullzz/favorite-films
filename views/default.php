@@ -1,5 +1,6 @@
 <?php
 	require_once('modules/content.php');
+	require_once('././widgets/widget.php');
 	$cm = new ContentManager();
 	$headers = $cm->getHeaders();
 	$title = $cm->getTitle();
@@ -12,7 +13,6 @@
 	<meta charset="utf-8"> <!--Возможны проблемы в браузерах, не поддерживающих HTML5-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="script.js"></script>
-	<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
 	<? echo $headers; ?>
 </head>
 <body>
@@ -22,7 +22,7 @@
 		include_once('modules/header.php');			//Содержит шапку сайта
 		include_once('modules/menu.php');			//Содержит меню. Редактируется вручную!
 		echo "<div id='page_title'><h2>$title</h2></div><hr/>"; 
-		echo "<div id='content'>$content</div>";		//include_once('content.php');		//Осуществляет работу со страницами
+		echo "<div id='content'>" . widget::parse($content) . "</div>";		//include_once('content.php');		//Осуществляет работу со страницами
 		include_once('modules/footer.php');			//Содержит подвал сайта
 		?>
 	</div>

@@ -13,5 +13,14 @@ class _films
 		}
 		return $result;
 	}
+	
+	static function getRandomFilm()
+	{
+		$uid = $_SESSION['uid'];
+		$conn = DBConnection::getInstance();
+		$q = $conn->query("SELECT * FROM films ORDER BY RAND() LIMIT 1;");
+		$film = $q->fetch_object();
+		return $film;
+	}
 }
 ?>
